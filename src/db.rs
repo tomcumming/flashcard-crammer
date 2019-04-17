@@ -1,7 +1,7 @@
 use std::io::BufRead;
 
-pub fn read_list_file<'a, T: 'static>(
-    path: &'a str
+pub fn read_list_file<T: 'static>(
+    path: &str
 ) -> Box<dyn Iterator<Item=Result<T, String>>>
     where for<'b> T: serde::Deserialize<'b>
 {
